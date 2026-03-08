@@ -15,20 +15,25 @@ SonarQube instance for Elixir language support.
 Add `sonarqube` to your list of dependencies and configure it as the cover tool in `mix.exs`:
 
 ```elixir
-def deps do
-  [
-    {:sonarqube, "~> 0.1.0", only: [:dev, :test], runtime: false}
-  ]
-end
-
 def project do
   [
+    app: :your_app,
+    deps: deps(),
+    version: "0.1.0",
+    # Add this.
     test_coverage: [tool: SonarQube.Coverage]
   ]
 end
 
+# Add this so `mix sonarqube.coverage` runs in the test environment.
 def cli do
   [preferred_envs: ["sonarqube.coverage": :test]]
+end
+
+def deps do
+  [
+    {:sonarqube, "~> 0.1.0", only: [:dev, :test], runtime: false}
+  ]
 end
 ```
 

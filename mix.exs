@@ -12,7 +12,7 @@ defmodule SonarQube.MixProject do
       description: "Mix utilities for the sonar-elixir SonarQube plugin.",
       dialyzer: dialyzer(),
       docs: docs(),
-      elixir: "~> 1.14",
+      elixir: "~> 1.15",
       name: "SonarQube",
       package: package(),
       source_url: @source_url,
