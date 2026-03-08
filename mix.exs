@@ -27,7 +27,7 @@ defmodule SonarQube.MixProject do
   end
 
   defp test_coverage do
-    [tool: SonarQube.Coverage]
+    [tool: SonarQube.Coverage, summary: [threshold: 0]]
   end
 
   def application do

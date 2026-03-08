@@ -26,7 +26,6 @@ sonarqube-*.tar
 
 # SonarQube
 .scannerwork/
-sonar-project.properties
 
 # Misc
 .DS_Store
