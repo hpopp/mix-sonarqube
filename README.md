@@ -3,6 +3,7 @@
 > Mix utilities for the sonar-elixir SonarQube plugin.
 
 [![CI](https://github.com/hpopp/mix-sonarqube/actions/workflows/ci.yml/badge.svg)](https://github.com/hpopp/mix-sonarqube/actions/workflows/ci.yml)
+[![Quality Gate Status](https://sonarqube.hpopp.dev/api/project_badges/measure?project=mix-sonarqube&metric=alert_status&token=sqb_0a501102bdef334017355dc7da9618af68397081)](https://sonarqube.hpopp.dev/dashboard?id=mix-sonarqube)
 [![Hex.pm](https://img.shields.io/hexpm/v/sonarqube.svg)](https://hex.pm/packages/sonarqube)
 [![License](https://img.shields.io/github/license/hpopp/mix-sonarqube)](LICENSE)
 [![Last Updated](https://img.shields.io/github/last-commit/hpopp/mix-sonarqube.svg)](https://github.com/hpopp/mix-sonarqube/commits/main)
