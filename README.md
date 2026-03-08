@@ -1,15 +1,16 @@
+# SonarQube
+
+> SonarQube integration tools for Elixir projects.
+
 [![CI](https://github.com/hpopp/mix-sonarqube/actions/workflows/ci.yml/badge.svg)](https://github.com/hpopp/mix-sonarqube/actions/workflows/ci.yml)
 [![Hex.pm](https://img.shields.io/hexpm/v/sonarqube.svg)](https://hex.pm/packages/sonarqube)
 [![License](https://img.shields.io/github/license/hpopp/mix-sonarqube)](LICENSE)
 [![Last Updated](https://img.shields.io/github/last-commit/hpopp/mix-sonarqube.svg)](https://github.com/hpopp/mix-sonarqube/commits/main)
 
-# SonarQube
-
-SonarQube integration tools for Elixir projects.
-
-**Note:** Mix tasks in this package are meant to be run before `sonar-scanner` to support features like test
-coverage reporting. You also need the [sonar-elixir](https://github.com/hpopp/sonar-elixir) plugin installed
-in your SonarQube instance for Elixir language support.
+> [!NOTE]
+> Mix tasks in this package are meant to be run before `sonar-scanner` to support features like test
+> coverage reporting. You also need the [sonar-elixir](https://github.com/hpopp/sonar-elixir) plugin installed
+> in your SonarQube instance for Elixir language support.
 
 ## Installation
 
