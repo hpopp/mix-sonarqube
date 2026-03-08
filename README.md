@@ -1,17 +1,18 @@
+[![CI](https://github.com/hpopp/mix-sonarqube/actions/workflows/ci.yml/badge.svg)](https://github.com/hpopp/mix-sonarqube/actions/workflows/ci.yml)
 [![Hex.pm](https://img.shields.io/hexpm/v/sonarqube.svg)](https://hex.pm/packages/sonarqube)
 [![License](https://img.shields.io/github/license/hpopp/mix-sonarqube)](LICENSE)
 [![Last Updated](https://img.shields.io/github/last-commit/hpopp/mix-sonarqube.svg)](https://github.com/hpopp/mix-sonarqube/commits/main)
 
 # SonarQube
 
-SonarQube integration tools for Elixir projects. Converts Elixir test coverage data into formats that SonarQube can import.
+SonarQube integration tools for Elixir projects.
 
 **Note:** You also need the [sonar-elixir](https://github.com/hpopp/sonar-elixir) plugin installed in your
 SonarQube instance for Elixir language support.
 
 ## Installation
 
-Add `sonarqube` to your list of dependencies in `mix.exs`:
+Add `sonarqube` to your list of dependencies and configure it as the cover tool in `mix.exs`:
 
 ```elixir
 def deps do
@@ -19,15 +20,15 @@ def deps do
     {:sonarqube, "~> 0.1.0", only: [:dev, :test], runtime: false}
   ]
 end
-```
 
-Then configure it as the cover tool:
-
-```elixir
 def project do
   [
     test_coverage: [tool: SonarQube.Coverage]
   ]
+end
+
+def cli do
+  [preferred_envs: ["sonarqube.coverage": :test]]
 end
 ```
 

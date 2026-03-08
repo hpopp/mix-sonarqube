@@ -20,8 +20,17 @@ defmodule Mix.Tasks.Sonarqube.Coverage do
 
   use Mix.Task
 
+  @preferred_cli_env :test
+
   @impl Mix.Task
   def run(args) do
+    if Mix.Project.config()[:test_coverage][:tool] != SonarQube.Coverage do
+      Mix.raise(
+        "Please specify 'test_coverage: [tool: SonarQube.Coverage]' " <>
+          "in the 'project' section of mix.exs"
+      )
+    end
+
     Mix.Task.run("test", ["--cover" | args])
   end
 end

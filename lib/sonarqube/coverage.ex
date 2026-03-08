@@ -3,24 +3,7 @@ defmodule SonarQube.Coverage do
   Cover tool that converts Elixir test coverage to SonarQube's generic
   coverage XML format.
 
-  ## Setup
-
-  Configure as the cover tool in your `mix.exs`:
-
-      def project do
-        [
-          test_coverage: [tool: SonarQube.Coverage]
-        ]
-      end
-
-  Then run:
-
-      $ mix test --cover
-      # or
-      $ mix sonarqube.coverage
-
-  This generates `cover/sonar-coverage.xml` which SonarQube can import
-  via the `sonar.coverageReportPaths` property.
+  See the [README](README.md) for installation and setup instructions.
 
   ## Options
 
@@ -64,7 +47,7 @@ defmodule SonarQube.Coverage do
   """
   @spec start(Path.t(), Keyword.t()) :: (-> :ok)
   def start(compile_path, opts) do
-    default_callback = apply(Mix.Tasks.Test.Cover, :start, [compile_path, opts])
+    default_callback = apply(cover_module(), :start, [compile_path, opts])
 
     fn ->
       output_path = Keyword.get(opts, :sonar_xml, @default_output)
@@ -215,6 +198,14 @@ defmodule SonarQube.Coverage do
       |> Enum.join("\n")
 
     ~s(<?xml version="1.0" encoding="UTF-8"?>\n<coverage version="1">\n#{files_xml}\n</coverage>\n)
+  end
+
+  # Elixir 1.19 renamed Mix.Tasks.Test.Cover to Mix.Tasks.Test.Coverage.
+  defp cover_module do
+    case Code.ensure_loaded(Mix.Tasks.Test.Coverage) do
+      {:module, mod} -> mod
+      _ -> Mix.Tasks.Test.Cover
+    end
   end
 
   @doc false
