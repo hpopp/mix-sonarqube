@@ -1,6 +1,6 @@
-# SonarQube
+# Mix SonarQube
 
-> SonarQube integration tools for Elixir projects.
+> Mix utilities for the sonar-elixir SonarQube plugin.
 
 [![CI](https://github.com/hpopp/mix-sonarqube/actions/workflows/ci.yml/badge.svg)](https://github.com/hpopp/mix-sonarqube/actions/workflows/ci.yml)
 [![Hex.pm](https://img.shields.io/hexpm/v/sonarqube.svg)](https://hex.pm/packages/sonarqube)
