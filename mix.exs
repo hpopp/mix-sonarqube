@@ -10,6 +10,7 @@ defmodule SonarQube.MixProject do
       cli: cli(),
       deps: deps(),
       description: "Mix utilities for the sonar-elixir SonarQube plugin.",
+      dialyzer: dialyzer(),
       docs: docs(),
       elixir: "~> 1.14",
       name: "SonarQube",
@@ -33,6 +34,10 @@ defmodule SonarQube.MixProject do
     [
       extra_applications: [:logger, :tools]
     ]
+  end
+
+  defp dialyzer do
+    [plt_add_apps: [:mix]]
   end
 
   defp deps do
