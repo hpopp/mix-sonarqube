@@ -7,8 +7,9 @@
 
 SonarQube integration tools for Elixir projects.
 
-**Note:** You also need the [sonar-elixir](https://github.com/hpopp/sonar-elixir) plugin installed in your
-SonarQube instance for Elixir language support.
+**Note:** Mix tasks in this package are meant to be run before `sonar-scanner` to support features like test
+coverage reporting. You also need the [sonar-elixir](https://github.com/hpopp/sonar-elixir) plugin installed
+in your SonarQube instance for Elixir language support.
 
 ## Installation
 
@@ -71,6 +72,8 @@ Add the coverage report path to your `sonar-project.properties`:
 ```properties
 sonar.coverageReportPaths=cover/sonar-coverage.xml
 ```
+
+Then run `sonar-scanner` to upload the results to your SonarQube instance.
 
 ## License
 

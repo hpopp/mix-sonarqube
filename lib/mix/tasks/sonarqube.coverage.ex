@@ -15,7 +15,8 @@ defmodule Mix.Tasks.Sonarqube.Coverage do
       $ mix sonarqube.coverage test/my_test.exs
 
   The output file can be imported into SonarQube by setting
-  `sonar.coverageReportPaths` in your `sonar-project.properties`.
+  `sonar.coverageReportPaths` in your `sonar-project.properties`,
+  then running `sonar-scanner`.
   """
 
   use Mix.Task
